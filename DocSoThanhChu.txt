@@ -1,0 +1,55 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        docSoThanhChu();
+    }
+        public static void docSoThanhChu() {
+            Scanner scanner=new Scanner(System.in);
+            System.out.println("nhap vao so tu nhien bat ki");
+            int a=scanner.nextInt();
+            if(a<10&&a>=0){
+                read(a);
+            }else if(a>=10&&a<100) {
+                int donVi= a%10;
+                int hangChuc=a/10;
+                if (hangChuc==1){
+                    System.out.print("muoi");
+                } else read(hangChuc);  System.out.print("muoi");
+                read(donVi);
+            } else if(a>=100&&a<1000){
+                int hangTram = a/100;
+                int hangChuc = (a-hangTram*100)/10;
+                int donVi = a%100-hangChuc*10;
+                read(hangTram);
+                System.out.print("tram");
+                if(hangChuc==1){
+                    System.out.print("muoi");
+
+                }else{ read(hangChuc);};
+                read(donVi);
+            }
+
+
+        }
+
+        static void read(int a) {
+            switch(a){
+                case 0: System.out.print("khong"); break;
+                case 1: System.out.print("mot");break;
+                case 2: System.out.print("hai");break;
+                case 3: System.out.print("ba");break;
+                case 4: System.out.print("bon");break;
+                case 5: System.out.print("nam");break;
+                case 6: System.out.print("sau");break;
+                case 7: System.out.print("bay");break;
+                case 8: System.out.print("tam");break;
+                case 9: System.out.print("chin");break;
+                default: System.out.print("loi!!!!"); break;
+            }
+
+        }
+}
